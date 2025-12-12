@@ -4,13 +4,13 @@ namespace GTModTemplate.Patches;
 
 public static class HarmonyPatches
 {
-    private Harmony? _harmonyInstance;
+    private static Harmony? _harmonyInstance;
 
     /// <summary>
     /// The current instance of Harmony that is patching the assembly.
     /// If there is no Harmony instance, it will create one and return it.
     /// </summary>
-    public Harmony? HarmonyInstance {
+    public static Harmony? HarmonyInstance {
         get
         {
             _harmonyInstance ??= new Harmony(Main.Instance.Info.Metadata.GUID);

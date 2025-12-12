@@ -1,4 +1,5 @@
 using GTModTemplate.Patches;
+using GTModTemplate.Utilities;
 using BepInEx;
 using UnityEngine;
 
@@ -16,7 +17,16 @@ public class Main : BaseUnityPlugin
         Instance ??= this;
         HarmonyPatches.Patch();
         
-        GorillaTagger.OnPlayerSpawned(OnPlayerSpawned);
+        // Here is the spot to load any Asset Bundles in your program.
+
+        // MethodUtilities.Attempt is a wrapper for the try block, we use it
+        // here to prevent your mod from breaking every other mod in the case
+        // that your OnPlayerSpawned() method causes errors.
+        GorillaTagger.OnPlayerSpawned(() => MethodUtilities.Attempt(OnPlayerSpawned));
+        
+        // This would be the spot to unload all of your AssetBundles when your
+        // assets have been loaded in. Save some memory!
+        AssetBundleUtilities.FreeCache();
     }
 
     // This method is called when the player spawns into the world.

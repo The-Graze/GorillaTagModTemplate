@@ -419,3 +419,4 @@ FodyWeavers.xsd
 
 # Why was bin not filtered? :/
 /bin
+/obj
