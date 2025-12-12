@@ -1,4 +1,5 @@
-# GorillaTagModTemplate
+# GorillaTagModTemplate ![Version](https://img.shields.io/nuget/v/bingus.gorillatagmodtemplate) ![Downloads](https://img.shields.io/nuget/dt/bingus.gorillatagmodtemplate)
+
 This is a feature-packed mod template for Gorilla Tag with pre-built tools.
 - Asset bundle management
 - Method safety (a wrapper for the `try` block)
