@@ -50,7 +50,7 @@ public static class AssetBundleUtilities
     public static T Load<T>(string path, string name) where T : Object
 	{
         var ab = LoadAssetBundle(path);
-		var obj = ab.LoadAsset<T>(name);
+		var obj = ab?.LoadAsset<T>(name);
 
 		if (ab == null || obj == null) {
 			Debug.LogError($"Cannot load assetbundle \"{path}\" object \"{name}\" to type \"{typeof(T).FullName}.\nValid streams: \n\t{Assembly.GetExecutingAssembly().GetManifestResourceNames().Join("\n\t")}");

@@ -13,10 +13,7 @@ public static class MethodUtilities
     /// </summary>
     public static bool Attempt(Action method)
     {
-        try
-        {
-            method();
-        }
+        try { method(); }
         catch (Exception ex)
         {
             Debug.LogError(ex);

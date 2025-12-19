@@ -10,10 +10,10 @@ public static class HarmonyPatches
     /// The current instance of Harmony that is patching the assembly.
     /// If there is no Harmony instance, it will create one and return it.
     /// </summary>
-    public static Harmony? HarmonyInstance {
+    public static Harmony HarmonyInstance {
         get
         {
-            _harmonyInstance ??= new Harmony(Main.Instance.Info.Metadata.GUID);
+            _harmonyInstance ??= new Harmony(Constants.Guid);
             return _harmonyInstance;
         }
     }
