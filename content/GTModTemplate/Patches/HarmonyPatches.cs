@@ -1,7 +1,7 @@
 using GorillaLocomotion;
 using HarmonyLib;
 
-namespace CosmeticNames.Patches;
+namespace GTModTemplate.Patches;
 
 public static class HarmonyPatches
 {
